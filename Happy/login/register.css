@@ -1,0 +1,60 @@
+.margin{width:1000px;margin: 0 auto;}
+
+
+#head{height:68px;margin-top: 30px;margin-bottom:18px; }
+#head .logo{float:left;}
+#head .logo a{}
+#head .logo a img{width:72px;height:68px;}
+#head .h-r{float: right;}
+#head .h-r{text-align: center}
+#head .h-r img{margin-top:20px; }
+
+#loginbox{width:980px;height:600px;}
+#loginbox .imgbox{float: left;width: 600px;text-align: center; padding-top: 50px;}
+#loginbox .imgbox img{width:560px;height:360px;border:0;}
+
+ 
+#loginbox .logintab{float: right;}    
+#loginbox .logintab ul{}
+#loginbox .logintab ul li{margin-bottom:15px;}
+#loginbox .logintab ul li input{width:302px;height:42px;}
+#loginbox .logintab ul li #btn{border:0;background: #F11D20;font:16px/42px "";color:#fff;}
+#loginbox .logintab ul li.qian input:nth-child(1){width:164px;height:42px;border:1px solid #ccc;}
+#loginbox .logintab ul li.qian:nth-child(1) input{width:304px;}
+#loginbox .logintab ul li.qian input:nth-child(2){width:118px;height:42px;border:1px solid #ccc;margin-left:18px; }
+#loginbox .logintab ul li a{color:#b81e20;}
+/* #loginbox .logintab ul li p{width:370px;height:42px;background: #F11D20;font:16px/42px "";color:#fff;text-align: center;} */
+
+#loginbox .logintab h3 i{float: left;}
+#loginbox .logintab h3 span{float: right;font:14px/42px "";}
+#loginbox .logintab h3 span a{color:#b81e20;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

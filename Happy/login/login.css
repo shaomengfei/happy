@@ -1,0 +1,30 @@
+.margin{width:1000px;margin: 0 auto;}
+
+#head{height:68px;margin-top: 30px;margin-bottom:18px; }
+#head .logo{float:left;}
+#head .logo a{}
+#head .logo a img{width:72px;height:68px;}
+#head .h-r{float: right;}
+#head .h-r{text-align: center}
+#head .h-r img{margin-top:20px; }
+
+#login{width: 980px;height:600px;}
+#login .right{float: right;width:368px;height:600px;}
+#login .right .bt{height:38px;width:318px;margin: 24px 0 20px 0;}
+#login .right .bt h2{float: left;font:22px/38px "";color:#F11D20;}
+#login .right .bt p{float: right;font:14px/38px "";}
+#login .right .bt p a{color:rgb(196, 31, 58);:14px/80px "";}
+#login .radio{}
+#login .radio span{margin-right: 20px;}
+#login .radio span input{border:0;border:1px solid #000;border-radius:50%; }
+#login .radio {}
+
+
+
+
+
+
+
+
+
+
