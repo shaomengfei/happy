@@ -10,15 +10,17 @@
 
 #login{width: 980px;height:600px;}
 #login .right{float: right;width:368px;height:600px;}
-#login .right .bt{height:38px;width:318px;margin: 24px 0 20px 0;}
-#login .right .bt h2{float: left;font:22px/38px "";color:#F11D20;}
-#login .right .bt p{float: right;font:14px/38px "";}
-#login .right .bt p a{color:rgb(196, 31, 58);:14px/80px "";}
-#login .radio{}
+#login .right .bt{height:38px;width:350px;margin: 24px 0 20px 0;}
+#login .right .bt h2{margin-left:10px;float: left;font:22px/38px "";color:#F11D20;}
+#login .right .bt p{float: right;font:14px/38px "";margin-left: 10px;}
+#login .right .bt p a{color:rgb(196, 31, 58);}
+#login .radio{text-align: center}
 #login .radio span{margin-right: 20px;}
-#login .radio span input{border:0;border:1px solid #000;border-radius:50%; }
-#login .radio {}
-
+#login .radio span input{border:0;border:1px solid #000;margin-bottom:10px;  }
+#login ul{}
+#login ul li{width:302;height:38px;margin:10px 0 10px 0;text-align: center;}
+#login ul li input{border:1px solid #000;width:302px;height:38px;}
+#login ul li:nth-child(3) input{border:0;background:#F11D20;color:#fff;}
 
 
 
