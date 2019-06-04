@@ -20,7 +20,7 @@
 #login ul{}
 #login ul li{width:302;height:38px;margin:10px 0 10px 0;text-align: center;}
 #login ul li input{border:1px solid #000;width:302px;height:38px;}
-#login ul li:nth-child(3) input{border:0;background:#F11D20;color:#fff;}
+#login ul li:nth-child(3) input{border:0;background:#F11D20;color:#fff;margin-top:20px;}
 
 
 

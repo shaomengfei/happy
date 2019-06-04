@@ -1,76 +1,63 @@
-class Magnifier{
-			constructor(){
-				this.sBox = document.querySelector(".s-box")
-				this.bBox = document.querySelector(".b-box")
-				this.span = document.querySelector("span")
-				this.sImg = document.querySelector(".s-box img");
-				this.bImg = document.querySelector(".b-box img");
-				this.imgs = document.querySelectorAll(".imgs img")
-				this.addEvent()
-				this.change()
-			}
-			addEvent(){
-				var that = this;
-				this.sBox.onmouseover = function(){
-					that.over();
-				}
-				this.sBox.onmouseout = function(){
-					that.out();
-				}
-				this.sBox.onmousemove = function(eve){
-					var e =eve ||window.event;
-					
-					that.move(e)
-				}
-			}
-			over(){
-				this.bBox.style.display = "block";
-			}
-			out(){
-				this.bBox.style.display = "none";
-			}
-			move(e){
-				
-				this.l = e.clientX - this.span.offsetWidth;
-				this.t = e.clientY - this.span.offsetHeight ;
-				if(this.l<0) this.l=0;
-				if(this.t<0) this.t=0;
-				if(this.l>this.sBox.offsetWidth - this.span.offsetWidth){
-					this.l = this.sBox.offsetWidth - this.span.offsetWidth
-				}
-				if(this.t>this.sBox.offsetHeight - this.span.offsetHeight){
-					this.t = this.sBox.offsetHeight - this.span.offsetHeight
-				}
-				this.span.style.left = this.l +"px"
-				this.span.style.top = this.t+"px"
-				
-				this.display()
-			}
+function Magfinier(){
+			this.sbox=document.querySelector(".left");
+			this.pbox=this.sbox.children[1];
+			this.bbox=document.querySelector(".m-y");
+			this.bimg=this.bbox.children[0];				
 			
-			display(){
-				this.x = this.l/(this.sBox.offsetWidth - this.span.offsetWidth)
-				this.y = this.t/(this.sBox.offsetHeight - this.span.offsetHeight)
-				this.bImg.style.left = (this.bBox.offsetWidth - this.bImg.offsetWidth)*this.x +"px";
-				this.bImg.style.top = (this.bBox.offsetHeight - this.bImg.offsetHeight)*this.y +"px"
-				
+			this.addEvent();
+		}
+		Magfinier.prototype.addEvent=function(){
+			var that=this;
+			this.sbox.onmouseover=function(){
+				that.show();
 			}
-			
-			change(){
-				for(var i=0;i<this.imgs.length;i++){
-					var that = this;
-					this.imgs[i].onclick = function(){
-//						获取图片的src
-						that.src = this.getAttribute("src");
-						that.sImg.setAttribute("src",that.src);
-						that.bImg.setAttribute("src",that.src);
-					}
-				}
+			this.sbox.onmouseout=function(){
+				that.hide();
 			}
-			
-			
+		}
+		Magfinier.prototype.show=function(){
+			this.pbox.style.display="block";
+			this.bbox.style.display="block";
+			this.addMove();
 		}
 		
-//		new Magnifier();
+		Magfinier.prototype.hide=function(){
+			this.pbox.style.display="none";
+			this.bbox.style.display="none";
+		}
+		
+		
+		Magfinier.prototype.addMove=function(){
+			var that=this;
+			this.sbox.onmousemove=function(eve){
+				var e=eve || window.event;
+				that.pBoxMove(e)
+			}
+		}
+		Magfinier.prototype.pBoxMove=function(e){
+			
+			this.l=e.offsetX-this.pbox.offsetWidth/2
+			this.t=e.offsetY-this.pbox.offsetHeight/2
+			if(this.l<0){this.l=0};
+			if(this.t<0){this.t=0};
+			if(this.l>this.sbox.offsetWidth-this.pbox.offsetWidth){
+				this.l=this.sbox.offsetWidth-this.pbox.offsetWidth;
+			}
+			if(this.t>this.sbox.offsetHeight-this.pbox.offsetHeight){
+				this.t=this.sbox.offsetHeight-this.pbox.offsetHeight
+			}
+			this.pbox.style.left=this.l+"px"
+			this.pbox.style.top=this.t+"px"
+			
+			this.x=this.l/(this.sbox.offsetWidth-this.pbox.offsetWidth)
+			this.y=this.t/(this.sbox.offsetHeight-this.pbox.offsetHeight)
+			
+			this.move();
+		}
+		Magfinier.prototype.move=function(){
+			this.bimg.style.left=-(this.bimg.offsetWidth-this.bbox.offsetWidth)*this.x+"px"
+			this.bimg.style.top=-(this.bimg.offsetHeight-this.bbox.offsetHeight)*this.y+"px"
+		}
 //	-------------------------------------	
 class details{
 	constructor(){
@@ -79,7 +66,7 @@ class details{
 	goods(){
 		var that = this;
 		$.ajax({
-			url:"../data/goods.json",
+			url:"../data/all.json",
 			type:"get",
 			dataType:"json",
 			success:function(res){
@@ -95,9 +82,14 @@ class details{
 			if(res[i].id == $.cookie("goods")){
 				console.log(res[i])
 				str+=`<div class="left">
-                <img src="${res[i].src}" >
+                <img src="${res[i].src}" />
+                <span></span>
+				<p></p>
             </div>
-           	
+           	<div class="m-y">
+				<img src="${res[i].src}">
+			</div>
+			
             <div class="right">
                 <p>
                     <span>[</span>
@@ -105,7 +97,7 @@ class details{
                     <span>]</span>
                     <b>${res[i].name2}</b>
                 </p>
-                <h2>再时髦的人也怕掉头发，不要让你的头发失去呵护，梳美人梳子，不上油漆，防静电，按摩舒适，柔顺发丝，陪你从青丝走到白发。</h2>
+                
                 <div class="price">
                     <span>快乐价</span>
                     <em>${res[i].price1}</em>
@@ -123,8 +115,8 @@ class details{
                         </li>
                     </ul>
                     <p>
-                        <a href="">立即购买</a>
-                        <a href="../car/car.html" class="a2" id="btn">加入购物车</a>
+                        <span><a href="">立即购买</a></span>
+                        <span><a href="../car/car.html" class="a2" id="btn">加入购物车</a><span>
                     </p>
                 </div>
             </div>
@@ -133,13 +125,13 @@ class details{
 		}
 		$(".box").html(str)
 		this.addEvent();
-		new Magnifier();
+		new Magfinier();
 		
 	}
 	addEvent(){
 				var that = this;
 //				console.log($(".m-r-c").children(".div5").children("a").eq())
-				this.cont =document.querySelector("p .a1")
+				this.cont =document.querySelector("p .a2")
 				this.cont.addEventListener("click",function(eve){
 					if(eve.target.id == "btn"){
 						console.log(this)
@@ -161,6 +153,7 @@ class details{
 					}];
 				}else{
 //					情况2:不是第一次添加
+				console.log(this.goods)
 					this.goods = JSON.parse(this.goods);
 //					新情况1：这次点击的是老数据
 					var onoff = true;
@@ -185,7 +178,6 @@ class details{
 			}	
 	
 }
-
 
 new details()
 

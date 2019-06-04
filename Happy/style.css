@@ -28,6 +28,40 @@ body{background: #f3f3f3;}
 #head .h-t .shopping{margin:0 auto;float: right;border: 2px solid #f31425;width:122px;height: 40px;border-radius: 40px;margin-top:18px; }
 #head .h-t .shopping i{display: inline-block;}
 #head .h-t .shopping span{font:16px/40px "";text-align: center;}
+
+
+
+
+
+#head .search .s-t .search-res{
+				position: absolute;
+				top:36px;
+				left: 0;
+				width: 416px;
+				border: 1px solid #b6b6b6;
+				border-bottom: 0;
+				/*border-top: none;*/
+				z-index: 1;
+				background: #fff;
+			}
+	
+#head .search .s-t .search-res li{
+				list-style-type: none;
+				line-height: 22px;
+				padding: 2px 5px;
+				/*border-bottom: 1px solid #b6b6b6;*/
+				
+			}
+#head .search .s-t .search-res li:hover{
+				background: #f00;
+				color:#fff;
+				
+			}
+
+
+
+
+
 #head .h-b{}
 #head .h-b ul{width:1090px;height:40px;}
 #head .h-b ul li{float: left;font:16px/40px "";width:110px;text-align:center;cursor: pointer;}
@@ -54,12 +88,12 @@ body{background: #f3f3f3;}
 #new .bt .bt-r{float: right;line-height: 32px;text-align:center;}
 #new .bt .bt-r i{}
 #new ul{overflow:hidden;}
-#new ul li{float: left;margin: 0 4px;}
-#new ul li:hover{border:2px solid #f31425;box-sizing:border-box ;}
+#new ul li{float: left;margin: 10px 4px;border:2px solid #FF00FF;}
+#new ul li:hover{border:0;border:2px solid #f31425;box-sizing:border-box ;}
 #new ul li a{}
-#new ul li a img{display:block;width:262px;height:262px;}
+#new ul li a img{display:block;width:260px;height:260px;}
 #new ul li .title{height:50px;margin: 7px 0;}
-#new ul li .title p{font:12px/2 "";color:#666;}
+#new ul li .title p{font:12px/20px "";color:#666;width:260px;}
 
 #new ul li .price{height:32px;}
 #new ul li .price span:nth-child(1){font-weight: bold;
@@ -76,10 +110,10 @@ body{background: #f3f3f3;}
    #active .bt p{float:left;height:32px;font:22px/32px "";color:#222;}
    #active .bt a img{width: 1090px;height:280px;display: block;}
    #active ul{height:396px;margin-top:20px;}
-   #active ul li{float: left;margin: 0 4px;}
-   #active ul li:hover{border:2px solid #f31425}
+   #active ul li{float: left;margin: 10px 4px;border:2px solid #FFC107;}
+   #active ul li:hover{border:0;border:2px solid #f31425;}
    #active ul li a{}
-   #active ul li a img{display:block;width:262px;height:262px;}
+   #active ul li a img{display:block;width:260px;height:260px;}
    #active ul li .title{height:60px;margin: 10px 0;}
    #active ul li .title p{font:12px/2 "";color:#666;}
    
@@ -98,10 +132,10 @@ body{background: #f3f3f3;}
       #best .bt{height:32px;margin-top:30px;}
       #best .bt p{float:left;height:32px;font:22px/32px "";color:#222;}
       #best ul{height:396px;margin-top:20px;}
-      #best ul li{float: left;margin: 0 4px;}
-      #best ul li:hover{border:2px solid #f31425}
+      #best ul li{float: left;margin: 10px 4px;border:2px solid #0DA2FA;}
+      #best ul li:hover{border:0;border:2px solid #f31425;}
       #best ul li a{}
-      #best ul li a img{display:block;width:262px;height:262px;}
+      #best ul li a img{display:block;width:260px;height:260px;}
       #best ul li .title{height:60px;margin: 10px 0;}
       #best ul li .title p{font:12px/2 "";color:#666;}
       

@@ -5,7 +5,7 @@ class List{
 	
 	init(){
 			var that = this;
-			$.ajax("./data/all.json",{
+			$.ajax("../data/all.json",{
 				type:"get",
 				dataType:"json",
 				success:function(res){
@@ -37,11 +37,11 @@ class List{
 			
 		}
 		
-		$("#new").find("ul").html(str);
-		$("#new").find("ul").children("li").click(function(){
+		$("#shop").find("ul").html(str);
+		$("#shop").find("ul").children("li").click(function(){
 			$.cookie("goods",$(this).attr("index"))
 			
-			$(location).attr("href","./Details page/details.html")
+			$(location).attr("href","../Details page/details.html")
 		})
 	}
 	

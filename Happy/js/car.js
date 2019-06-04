@@ -11,7 +11,7 @@ class car{
 		goods(){
 			var that = this;
 		$.ajax({
-		   url: "./data/goods.json",//json文件位置
+		   url: "../data/all.json",//json文件位置
 		   type: "get",//请求方式为get
 		   dataType: "json", //返回数据格式为json
 		   success: function(res) {//请求成功完成后要执行的方法 
@@ -34,6 +34,7 @@ class car{
 //			}
 		
 		carDisplay(res){
+//		console.log(getCookie("good"))
 			this.goods = JSON.parse(getCookie("good"));
 //			console.log(this.goods)	
 			var str = "";
@@ -43,8 +44,7 @@ class car{
 //						console.log(res[i].id)
 //						console.log(this.goods[j].id)
 							
-						str +=`<tr height="60" align="center">
-							
+						str +=`<tr height="60" align="center">		
 							<td width="100">
 								<input type="checkbox" name="" id="" value="" />
 							</td>
@@ -55,7 +55,7 @@ class car{
 							
 							<td>${res[i].price1}</td>
 							<td>
-								<select></select>
+								<input type="number" value="1" />
 							</td>
 							<td>
 								${res[i].price2}
@@ -66,6 +66,7 @@ class car{
 				}
 			}			
 			$("table").children("#tbody").html(str);
+			 
 		}
 
 		addEvent(){
@@ -74,12 +75,13 @@ class car{
 				if(eve.target.nodeName == "EM"){
 //						找到点击商品的货号
 					that.id = eve.target.getAttribute("data-index");
+					
 //						删除DOM元素 	
 					eve.target.parentNode.parentNode.remove();
 //						6.遍历cookie,找到符合条件的数据,做删除
 					that.changeCookie(function(index){
 //							8.删除并再次设置回去
-						that.goods.splice(index,1);
+						that.goods.splice(index,1);		
 					})
 				}
 			})
@@ -114,5 +116,5 @@ class car{
 		
 	new car({
 			tbody:document.getElementById("tbody"),
-			url:"./data/goods.json"
+			url:"./data/all.json"
 		})
