@@ -3,8 +3,13 @@ function Magfinier(){
 			this.pbox=this.sbox.children[1];
 			this.bbox=document.querySelector(".m-y");
 			this.bimg=this.bbox.children[0];				
+			this.imgs = document.querySelectorAll(".imgs img")
+			this.sImg = document.querySelector(".left img");
+				this.bImg = document.querySelector(".m-y img");
+			
 			
 			this.addEvent();
+			this.change();
 		}
 		Magfinier.prototype.addEvent=function(){
 			var that=this;
@@ -58,6 +63,23 @@ function Magfinier(){
 			this.bimg.style.left=-(this.bimg.offsetWidth-this.bbox.offsetWidth)*this.x+"px"
 			this.bimg.style.top=-(this.bimg.offsetHeight-this.bbox.offsetHeight)*this.y+"px"
 		}
+		
+		Magfinier.prototype.change = function(){
+			
+			for(var i=0;i<this.imgs.length;i++){
+				var that = this;
+//				console.log(this.imgs.length)
+				this.imgs[i].onclick = function(){
+//						获取图片的src
+					that.src = this.getAttribute("src");
+					that.sImg.setAttribute("src",that.src);
+					that.bImg.setAttribute("src",that.src);
+				}
+			}
+			
+		}
+		
+			
 //	-------------------------------------	
 class details{
 	constructor(){
@@ -81,7 +103,8 @@ class details{
 		for(var i=0;i<res.length;i++){
 			if(res[i].id == $.cookie("goods")){
 				console.log(res[i])
-				str+=`<div class="left">
+				str+=`
+				<div class="left">
                 <img src="${res[i].src}" />
                 <span></span>
 				<p></p>
@@ -89,7 +112,12 @@ class details{
            	<div class="m-y">
 				<img src="${res[i].src}">
 			</div>
-			
+//			----------------------
+			<div class="imgs">
+			<img src="${res[i].src}">
+    		<img src="http://img10.360buyimg.com/n8/jfs/t1/30525/38/3722/336626/5c777ea5Ecd676d65/667e9abf8dd13b86.jpg" />
+    		<img src= "http://img14.360buyimg.com/n8/jfs/t1/19042/4/12985/88537/5c9b5621Eb94ea167/cf5bd6cc7f6d8d01.jpg" />
+    	</div>
             <div class="right">
                 <p>
                     <span>[</span>
@@ -116,7 +144,7 @@ class details{
                     </ul>
                     <p>
                         <span><a href="">立即购买</a></span>
-                        <span><a href="../car/car.html" class="a2" id="btn">加入购物车</a><span>
+                        <span index="${res[i].id}"><a href="car.html" class="a2" id="btn" >加入购物车</a><span>
                     </p>
                 </div>
             </div>
@@ -145,6 +173,7 @@ class details{
 			setCookie(){
 //				因为要使用一条cookie存商品,所以数据选择数组里面放对象[{},{}]
 				this.goods = getCookie("good");
+				
 //				情况1:第一次添加
 				if(this.goods == ""){
 					this.goods = [{

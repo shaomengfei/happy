@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../public.css"/>
-		<link rel="stylesheet" type="text/css" href="car.css"/>
+		<link rel="stylesheet" type="text/css" href="../car/car.css"/>
 	</head>
 	<body>
 		<div id="top">
@@ -32,14 +32,16 @@
             <img src="https://ecimg.happigo.com/resource/web/images/top_center.jpg">
         </div>
     </div>
-    <table border="1" cellspacing="0" width="1200" align="center">
-					<thead >
+    <div class="m-c" id="cont">
+				<table border="1" cellspacing="0" width="1200" align="center">
+					<thead>
 						<tr height="50">
 							<th width="100">
 								<input type="checkbox" name="" id="" value="" />
 								全选
 							</th>
 							<th>商品名称</th>
+							
 							<th width="130">单价</th>
 							<th width="130">数量</th>
 							<th width="130">小计</th>
@@ -47,29 +49,25 @@
 						</tr>
 					</thead>
 					<tbody id="tbody">
-						<tr height="60" align="center">
+						<!--<tr height="60" align="center">
 							
 							<td width="100">
 								<input type="checkbox" name="" id="" value="" />
 							</td>
-							<!--名称-->
 							<td>
 								<img src=""/>
-								<span>款式风格</span>
+								<span></span>
 							</td>
-							<!--单价-->
+							
 							<td>￥58</td>
-							<!--数量-->
 							<td>
-								<input type="number" min="1" id="" value="1" />
+								<select></select>
 							</td>
-							<!--小计-->
 							<td>
-								￥120.00
+								￥110.00
 							</td>
-							<!--删除-->
 							<td><em data-index="">删除</em></td>
-						</tr>
+						</tr>-->
 						<tr height="60" align="center">
 							
 							<td width="100">
@@ -82,7 +80,7 @@
 							
 							<td>￥58</td>
 							<td>
-								<input type="number" min="1" id="" value="1" />
+								<input type="number" name="" id="" value="" />
 							</td>
 							<td>
 								￥110.00
@@ -101,10 +99,17 @@
 						</tr>
 					</tfoot>
 				</table>
+			</div>
+			<div class="m-b margin">
+				<div class="inp">
+					<a href="../index.html"><input type="button" name="" id="" value="<<继续购物" /></a>
+					<input type="button" name="" id="" value="￥去结算>>" />
+				</div>
+			</div>
 	</body>
 	<script src="../js/jquery.2.2.4.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/ajax.2.0.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../js/cookie.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../car/cookie.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/car.js" type="text/javascript" charset="utf-8"></script>
 </html>

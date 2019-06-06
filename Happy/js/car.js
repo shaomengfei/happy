@@ -1,10 +1,10 @@
 class car{
 		constructor(options){
-			this.goods()
 			
 			this.tbody = options.tbody;
 			this.url = options.url;
 			
+			this.goods()
 			this.addEvent();
 		}
 //		商品
@@ -34,7 +34,7 @@ class car{
 //			}
 		
 		carDisplay(res){
-//		console.log(getCookie("good"))
+		console.log(getCookie("good"))
 			this.goods = JSON.parse(getCookie("good"));
 //			console.log(this.goods)	
 			var str = "";
@@ -42,11 +42,12 @@ class car{
 				for(var j=0;j<this.goods.length;j++){					
 					if(res[i].id == this.goods[j].id){
 //						console.log(res[i].id)
-//						console.log(this.goods[j].id)
+						console.log(this.goods[j].id)
 							
-						str +=`<tr height="60" align="center">		
+						str +=`<tr height="60" align="center">
+							
 							<td width="100">
-								<input type="checkbox" name="" id="" value="" />
+								<input type="checkbox"  id="" value="" />
 							</td>
 							<td>
 								<img src="${res[i].src}"/>
@@ -55,17 +56,17 @@ class car{
 							
 							<td>${res[i].price1}</td>
 							<td>
-								<input type="number" value="1" />
+								<input type="number" min="1" id="" value="1" />
 							</td>
 							<td>
-								${res[i].price2}
+								${res[i].price1}
 							</td>
-							<td><em data-index="${this.goods[j].id}">删除</em></td>
+							<td><em data-index="">删除</em></td>
 						</tr>`;
 					}
 				}
 			}			
-			$("table").children("#tbody").html(str);
+			$(".m-c").children("table").children("#tbody").html(str);
 			 
 		}
 
@@ -116,5 +117,19 @@ class car{
 		
 	new car({
 			tbody:document.getElementById("tbody"),
-			url:"./data/all.json"
+			url:"../data/all.json"
 		})
+
+//-------------------------------
+
+	
+
+
+
+
+
+
+
+
+
+

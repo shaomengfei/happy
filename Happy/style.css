@@ -59,14 +59,32 @@ body{background: #f3f3f3;}
 			}
 
 
-
-
-
 #head .h-b{}
 #head .h-b ul{width:1090px;height:40px;}
 #head .h-b ul li{float: left;font:16px/40px "";width:110px;text-align:center;cursor: pointer;}
 #head .h-b ul li:hover{color:#f00;}
 #head .h-b ul li:nth-child(1){width:170px;background: #f31425;font:16px/40px "";color:#fff;}
+
+
+/*-----------------------------------*/
+
+#head .h-b ul li dl{position:absolute;border: 1px solid #000;border-bottom:0;z-index: 1;text-align: center;font:14px/30px "";background:#f31425;color:#fff;top:215px;left:167px;display: none;}
+#head .h-b ul li:hover dl{display: block;}
+#head .h-b ul li dl dd{width:170px;height: 49px;font:18px/49px "";border-bottom: 1px solid #ccc;}
+#head .h-b ul li dl dd:hover{background:#fff;color:#f31425;}
+
+
+#head .h-b ul li dl dd dl{position:absolute;width:600px;height:298px;top:-1px;border: 1px solid #000;border-left:0;text-align: center;font:14px/30px "";background:#fff;color:#000;left: 170px;}
+
+
+
+#head .h-b ul li dl dd dl dt{display:flex;justify-content:space-around;font: 14px/60px "";}
+#head .h-b ul li dl dd dl dt span{font: 18px/52px "";}
+
+#head .h-b ul li:hover dl dd dl{display: none;}
+
+#head .h-b ul li dl dd:hover dl{display: block;}
+
 
 
 

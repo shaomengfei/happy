@@ -18,8 +18,23 @@
 #head .h-r{text-align: center}
 #head .h-r img{margin-top:20px; }
 
+#cont #tbody{height:80px;}
+#cont #tbody tr td img{height:80px;}
+#cont #tbody tr td input{width:40px;}
 
 
+
+
+.m-b{height:80px;margin-top:30px ;}
+.m-b .inp{float: right;}
+.m-b input{border: 0;width: 150px;height: 40px;text-align: center;background:#b81b22 ;margin:20px 10px 0 0;color:#fff;}
+
+/*.m-c table{} 
+.m-c table #tbody{} 
+.m-c table #tbody td{} 
+.m-c table #tbody td img{width:50px;height:50px;} 
+
+ .m-c table #tbody td input{display: block;width:40px;}*/
 
 
 

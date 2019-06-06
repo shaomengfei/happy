@@ -54,8 +54,11 @@ body{}
 .main .m-c p{position: absolute;left:0;top:0;right:0;bottom: 0;margin:0;}
 .main .m-y{width:400px;height:400px;position: absolute;left: 830px;top: 312px;overflow: hidden;display: none;border:1px solid #000;z-index: 1;}
 .main .m-y img{position: absolute;width: 1200px;height: 1200px;}*/
-
-
+#cont .imgs{position: relative;top:420px;}
+#cont .imgs img{position: absolute;width:80px;height:80px;}
+#cont .imgs img:nth-child(0){left:0;}
+#cont .imgs img:nth-child(1){left:120px;}
+#cont .imgs img:nth-child(2){left:240px;}
 
 
 #cont .box .right{float:right;width:560px;height:464px;}
